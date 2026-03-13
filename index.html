@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THALLYSON GAMA - 78097</title>
+
+
+<style>
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1bf1ca,#f3d6dc,#d60a7b);
+}
+
+section{
+    text-align:center;
+}
+
+h1{
+    font-size:3rem;
+}
+
+#count{
+    font-size:7rem;
+    font-weight:bold;
+    color:#222;
+}
+
+button{
+    padding:12px 24px;
+    margin:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<section>
+
+<h1>Counter</h1>
+
+<div id="box-counter">
+<span id="count">0</span>
+</div>
+
+<div id="button-container">
+<button id="btn-decrement" class="btn">Decrease</button>
+<button id="btn-reset" class="btn">Reset</button>
+<button id="btn-increment" class="btn">Increase</button>
+</div>
+
+</section>
+
+<script>
+
+const boxCounter = document.getElementById('count');
+const btnDecrement = document.getElementById('btn-decrement');
+const btnReset = document.getElementById('btn-reset');
+const btnIncrement = document.getElementById('btn-increment');
+
+let counter = 0;
+
+const buttonContainer = document.getElementById('button-container');
+
+buttonContainer.addEventListener('click', e => {
+
+if (e.target.classList.contains("btn")) {
+
+    if (e.target === btnDecrement) {
+        counter--;
+    }
+    else if (e.target === btnReset) {
+        counter = 0;
+    }
+    else if (e.target === btnIncrement) {
+        counter++;
+    }
+
+    boxCounter.innerText = counter;
+
+    if (counter > 0) {
+        boxCounter.style.color = "green";
+    }
+    else if (counter < 0) {
+        boxCounter.style.color = "red";
+    }
+    else {
+        boxCounter.style.color = "#222";
+    }
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
